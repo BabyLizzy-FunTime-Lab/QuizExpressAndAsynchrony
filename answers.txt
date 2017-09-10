@@ -1,0 +1,6 @@
+1. 
+NodeJS is a runtime for developing network applications in
+javascript, on a pc or mac. It is great for creating 
+asynchronous event driven code.
+
+2.
