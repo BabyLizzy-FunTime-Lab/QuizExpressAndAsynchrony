@@ -4,3 +4,56 @@ javascript, on a pc or mac. It is great for creating
 asynchronous event driven code.
 
 2.
+Once the url and the coresponding ip adress has been found and a rout has been soorted out.
+A http get request is sent to the server that contains www.mywebsite.com. The server handels the request
+and sends a response with html in it. Once the browser recieves the html response from the server it will 
+send out another get request for all the embeded objects in the html.
+
+3. 
+AJAX (Asynchronous JavaScript And XML) is a build in feature of the browser. it uses the build in XMLHttpRequest 
+object, javascript and the HTML DOM. By using AJAX you can update the page, send data to the server and recieve data from the server withoout reloading the page.
+
+example:
+// This code updates the "recieved messages" box every second.
+// It will take all the messages and put them in one div.
+// There is no Data base in this example. The server stores messages in an array.   
+function updateMessages() {
+	fetch('/fetchMessages').then(
+		function (response) {
+			let messagesDiv = document.getElementById("messages");
+
+			response.text().then(function(text) {
+				messageDiv.innerHTML = text;
+			})
+		}
+	)
+	.catch(function(error) {
+		console.log("Could not fetch messages")
+	});
+};
+
+setinterval(updateMessages, 1000);
+
+// This code will send new messages to the server.
+// html button onclick="sendMessage()"
+var newMessage = new  
+function updateMessages() {
+	fetch('/fetchMessages', {
+		method: "POST",
+		body: text
+	})
+	.then(
+		function (response) {
+			let messagesDiv = document.getElementById("messages");
+
+			response.text().then(function(text) {
+				messageDiv.innerHTML = text;
+			})
+		}
+	)
+	.catch(function(error) {
+		console.log("Could not fetch messages")
+	});
+};
+
+
